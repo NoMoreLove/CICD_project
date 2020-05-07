@@ -12,10 +12,12 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("docker login") {
+        stage("create docker image") {
             steps {
-                echo " ============== docker login =================="
-                sh 'docker login -u nomorelove -p lbog_1234'
+                  echo " ============== start building image =================="
+              {
+                	sh 'docker build -t nomorelove/toolbox:latest . '
+                }
             }
         }
         stage("First step") {
