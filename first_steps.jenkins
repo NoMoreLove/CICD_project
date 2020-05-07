@@ -37,6 +37,7 @@ pipeline {
                 docker push nomorelove/toolbox:latest
                 '''
             }
+        }
         stage("First step") {
             steps {
                 sh 'hostname'
