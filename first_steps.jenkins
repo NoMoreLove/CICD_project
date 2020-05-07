@@ -22,22 +22,6 @@ pipeline {
                 }
             }
         }
-        stage("create docker image") {
-            steps {
-                echo " ============== start building image =================="
-                {
-                	sh 'docker build -t nomorelove/toolbox:latest . '
-                }
-            }
-        }
-        stage("docker push") {
-            steps {
-                echo " ============== start pushing image =================="
-                sh '''
-                docker push nomorelove/toolbox:latest
-                '''
-            }
-        }
         stage("First step") {
             steps {
                 sh 'hostname'
