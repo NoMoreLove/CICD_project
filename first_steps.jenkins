@@ -18,6 +18,13 @@ pipeline {
                 sh 'docker build -t nomorelove/toolbox:latest .'
             }
         }
+        stage("run docker image") {
+            steps {
+                echo " ============== run docker image =================="
+                sh 'whoami'
+                sh 'docker run nomorelove/toolbox'
+            }
+        }
         stage("First step") {
             steps {
                 sh 'hostname'
