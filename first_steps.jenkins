@@ -15,7 +15,6 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 sh 'whoami'
-                sh 'su -p aA1#qwertyuiop'
                 sh 'docker run hello-world'
             }
         }
